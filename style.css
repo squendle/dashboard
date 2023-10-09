@@ -11,19 +11,12 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #000000;
+  background-color: var(--near-black);
   font-family: 'Ubuntu', sans-serif;
   display: grid;
-  justify-content: center;
+  grid-template-columns: 300px 1fr;
 }
 
-h1 {
-  font-size: 3rem;
-  color: var(--steel-blue);
-  font-weight: 700;
-  padding: 0;
-  margin: 0;
-}
 
 p {
   color: #ffffff;
@@ -33,14 +26,69 @@ p {
   font-size: 1rem;
 }
 
-.container {
-  padding: 2rem;
-  background-color: var(--near-black);
-  width: 30rem;
-  border-radius: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.header {
+  grid-column: 2;
+  background-color: var(--steel-blue);
+  height: 20%;
+}
+
+.sidebar {
+  grid-column: 1;
+  grid-row: 1;
+  background-color: var(--reddish);
+  width: 100%;
+  height: 100vh;
+}
+
+.branding {
+  display: grid;
+  grid-template-columns: 77px 1fr;
   align-items: center;
-  border: solid 3px var(--near-white);
+  padding: 1rem;
+}
+
+#po-logo {
+  height: 77px;
+  grid-column: 1;
+}
+
+.branding > h1 {
+  grid-column: 2;
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+}
+
+
+.dashboard-links {
+  display: grid;
+  grid-template-rows: repeat(10, 1fr);
+  gap: .5rem;
+}
+
+.sidebar-svg {
+  fill: #ffffff;
+  height: 1.5rem;
+}
+
+.sidebar-link-text {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.svg-plus-link {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  margin-left: 2rem;
+  align-items: center;
+}
+
+.main-links {
+  grid-row: 1 / 7;
+}
+
+.support-links {
+  grid-row: 8 / 11;
 }
