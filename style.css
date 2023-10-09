@@ -8,6 +8,10 @@
  --reddish: #D10000;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -15,6 +19,7 @@ body {
   font-family: 'Ubuntu', sans-serif;
   display: grid;
   grid-template-columns: 300px 1fr;
+  grid-template-rows: 25vh 75vh;
 }
 
 
@@ -26,18 +31,12 @@ p {
   font-size: 1rem;
 }
 
-.header {
-  grid-column: 2;
-  background-color: var(--steel-blue);
-  height: 20%;
-}
 
 .sidebar {
   grid-column: 1;
-  grid-row: 1;
+  grid-row: 1 / span 2;
   background-color: var(--reddish);
   width: 100%;
-  height: 100vh;
 }
 
 .branding {
@@ -45,10 +44,11 @@ p {
   grid-template-columns: 77px 1fr;
   align-items: center;
   padding: 1rem;
+  margin-top: .5rem;
 }
 
 #po-logo {
-  height: 77px;
+  height: 60px;
   grid-column: 1;
 }
 
@@ -64,8 +64,8 @@ p {
 
 .dashboard-links {
   display: grid;
-  grid-template-rows: repeat(10, 1fr);
-  gap: .5rem;
+  grid-template-rows: repeat(10, 2.5rem);
+  margin-top: 3rem;
 }
 
 .sidebar-svg {
@@ -80,6 +80,7 @@ p {
 
 .svg-plus-link {
   display: grid;
+  grid-template-rows: 2.5rem;
   grid-template-columns: 1fr 4fr;
   margin-left: 2rem;
   align-items: center;
@@ -91,4 +92,89 @@ p {
 
 .support-links {
   grid-row: 8 / 11;
+}
+
+.header {
+  grid-column: 2;
+  grid-row: 1;
+  background-color: var(--steel-blue);
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 4fr;
+}
+
+.header-svg {
+  fill: var(--near-white);
+  height: 1.5rem;
+}
+
+.search {
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  grid-template-rows: 1.5fr;
+  align-items: center;
+  grid-column: 1;
+  grid-row: 1;
+  padding: 1rem;
+}
+
+.search > input {
+  border-radius: 10px;
+  background-color: var(--near-white);
+  max-width: 40rem;
+}
+
+.search > svg {
+  justify-self: center;
+}
+
+.user-menu {
+  display: grid;
+  grid-template-columns: 3rem 4rem 10rem;
+  align-items: center;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.user-menu > h3 {
+  color: var(--near-white)
+}
+
+.user-info {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  grid-template-rows: 25px 1fr;
+  grid-row: 2;
+  grid-column: 1;
+  grid-column-gap: 1rem;
+  margin-left: 3rem;
+}
+
+.user-info > p {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.user-info > h2 {
+  color: var(--near-white);
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.user-info > img {
+  grid-row: 1 / span 2;
+}
+
+.user-image {
+ height: 5rem;
+ border-radius: 50%;
+}
+
+.small-user-image {
+  height: 3rem;
+}
+
+.main {
+  grid-column: 2;
+  grid-row: 2;
 }
